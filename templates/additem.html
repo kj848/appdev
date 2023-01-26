@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Item</title>
+</head>
+<body>
+<h1>Add Item:</h1>
+<br>
+<form method="POST">
+    {{ addform.hidden_tag() }}
+
+    {{ addform.name.label(
+    class="form-label") }}
+
+    {{ addform.name(
+    class="form-control") }}
+    <br>
+
+    {{ addform.price.label(
+    class="form-label") }}
+
+    {{ addform.price(
+    class="form-control") }}
+    <br>
+
+    {{ addform.add(class="btn
+    btn-secondary") }}
+    <br>
+
+</form>
+
+<br>
+   <a href="/">rshop</a>
+
+
+
+</body>
+</html>
