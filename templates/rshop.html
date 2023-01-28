@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} Rewards Shop {% endblock %}
+{% block body %}
+
+<div class="container" id="topdiv6">
+    <h2>Rewards Shop</h2>
+				<div class="row" id="index0">
+					{% for row in all_data %}
+                    <div class="card m-2" style="width: 18rem;">
+                        <img class="card-img-top" src="/static/placeholder.jpg" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">{{row.name}}</h5>
+                        <p class="card-text">Price: {{row.price}} points <br> Qty: {{row.quantity}}</p>
+                        <a href="#" class="btn btn-primary float-right">Redeem</a>
+                        </div>
+                    </div>
+					{% endfor %}
+				</div>
+	</div>
+{% endblock %}
