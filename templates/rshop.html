@@ -1,18 +1,39 @@
 {% extends 'base.html' %}
 {% block title %} Rewards Shop {% endblock %}
 {% block body %}
+<div class="jumbotron p-3">
+    <div class="well text-center">
+
+        <h1>Rewards Shop</h1>
+
+    </div>
+</div>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
 
 <div class="container" id="topdiv6">
-    <h2>Rewards Shop</h2>
+<!--    <h2>Rewards Shop</h2>-->
 				<div class="row" id="index0">
 					{% for row in all_data %}
                     <div class="card m-2" style="width: 18rem;">
                         <img class="card-img-top" src="/static/placeholder.jpg" alt="Card image cap">
+
                         <div class="card-body">
                         <h5 class="card-title">{{row.name}}</h5>
-                        <p class="card-text">Price: {{row.price}} points <br> Qty: {{row.quantity}}</p>
-                        <a href="#" class="btn btn-primary float-right">Redeem</a>
+                        <p class="card-text">Price: {{row.price}} points <br> </p>
+                            <a href="/redeem/{{row.id}}" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modaledit{{row.id}}" onclick="return confirm ('Are you sure you want to Redeem?')">Redeem</a>
+
                         </div>
+<!--                        <img src="{{ user_image }}" alt="not appearing" width="50" height="40">-->
+
                     </div>
 					{% endfor %}
 				</div>
